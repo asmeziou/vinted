@@ -114,3 +114,7 @@ header .container img {
   display: flex;
   align-items: center;
 }
+footer {
+  padding: 15px 0;
+  text-align: center;
+}
