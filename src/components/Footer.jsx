@@ -1,6 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="wrapper">MAde with React at Le Reacteur with ❤</footer>
+    <footer>
+      <div className="wrapper">MAde with React at Le Reacteur with ❤</div>
+    </footer>
   );
 };
 
