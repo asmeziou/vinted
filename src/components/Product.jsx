@@ -3,7 +3,7 @@ const Product = ({ data }) => {
     <article className="container-offer">
       <div className="detail-offer wrapper">
         <div>
-          <img src={data.product_pictures[0].url} />
+          <img src={data.product_pictures[0].secure_url} />
         </div>
         <div>
           <div className="detail-offer-part1">

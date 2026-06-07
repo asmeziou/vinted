@@ -15,6 +15,7 @@ header .container > div {
   display: flex;
   align-items: center;
 }
+header .container > div button,
 header .container > div a {
   background-color: #fff;
   color: #2cb1ba;
@@ -118,4 +119,8 @@ footer {
   padding: 15px 0;
   text-align: center;
   background-color: #2cb1ba;
+}
+.filter-range {
+  margin-top: 30px;
+  width: 400px;
 }

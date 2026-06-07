@@ -5,7 +5,7 @@ import axios from "axios";
 
 import Offers from "../components/Offers";
 
-const Home = () => {
+const Home = ({ values, search }) => {
   // Les balises Link utilisent une propriété "to" permettant de cibler le path de l'une des route du router
 
   const [data, setData] = useState(null);
@@ -16,15 +16,15 @@ const Home = () => {
   const [count, setCount] = useState(0);
 
   const limit = 20;
-
+  // let skip = (page - 1) * limit;
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
           `https://lereacteur-vinted-api.herokuapp.com/offers?page=${page}&limit=${limit}`,
         );
-        console.log(response.data);
-        setData(response.data.offers);
+        // console.log(response.data); //OK
+        setData(response.data);
         setCount(response.data.count);
         setIsLoading(false);
       } catch (error) {
@@ -57,7 +57,7 @@ const Home = () => {
           Suivant
         </button>
       </div>
-      <Offers offers={data} />
+      <Offers offers={data.offers} values={values} search={search} />
     </main>
   );
 };
