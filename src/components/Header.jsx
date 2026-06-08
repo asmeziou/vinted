@@ -11,38 +11,43 @@ const Header = ({ token, setToken, values, setValues, search, setSearch }) => {
   const location = useLocation();
   return (
     <header>
-      <div>
-        <input
-          type="text"
-          id="search"
-          name="search"
-          value={search}
-          onChange={(event) => setSearch(event.target.value)}
-        ></input>
-      </div>
       <div className="container wrapper">
         <Link to="/">
           <img src={Logo} alt="vinted" />
         </Link>
-
-        {location.pathname === "/" && (
-          <div className="filter-range">
-            <FilterRange values={values} setValues={setValues} />
+        <div className="filter-site">
+          <div>
+            <input
+              type="text"
+              id="search"
+              name="search"
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+            ></input>
           </div>
-        )}
+          {location.pathname === "/" && (
+            <div className="filter-range">
+              <FilterRange values={values} setValues={setValues} />
+            </div>
+          )}
+        </div>
 
         <div>
           {token ? (
-            <button
-              onClick={() => {
-                // retirer le token du state
-                setToken(null);
-                // retirer le token des cookies
-                Cookies.remove("userToken");
-              }}
-            >
-              Déconnexion
-            </button>
+            <>
+              <button
+                className="btn-deconnexion"
+                onClick={() => {
+                  // retirer le token du state
+                  setToken(null);
+                  // retirer le token des cookies
+                  Cookies.remove("userToken");
+                }}
+              >
+                Déconnexion
+              </button>
+              <Link to="/publish">Ajouter produit</Link>
+            </>
           ) : (
             <>
               <Link to="/signup">S'inscrire</Link>

@@ -18,7 +18,7 @@ const Product = ({ data }) => {
             </div>
             <div>
               <span>ETAT:</span>
-              {data.product_details[1].ÉTAT}
+              {data.product_details[2].ÉTAT}
             </div>
           </div>
           <div className="detail-offer-part2">

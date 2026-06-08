@@ -21,7 +21,7 @@ const Home = ({ values, search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?page=${page}&limit=${limit}`,
+          `https://lereacteur-vinted-api.herokuapp.com/offers?page=${page}&limit=${limit}&title=${search}&priceMin=${values[0]}&priceMax=${values[1]}`,
         );
         // console.log(response.data); //OK
         setData(response.data);
@@ -33,7 +33,7 @@ const Home = ({ values, search }) => {
     };
 
     fetchData();
-  }, [page]);
+  }, [limit, page, search, values]);
 
   const totalPages = Math.ceil(count / limit);
 

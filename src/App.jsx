@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
+import Publish from "./pages/Publish";
 import FilterRange from "./components/FilterRange";
 
 function App() {
@@ -44,6 +45,8 @@ function App() {
           path="/login"
           element={<Login token={token} setToken={setToken} />}
         />
+
+        <Route path="/publish" element={<Publish token={token} />} />
       </Routes>
       <Footer />
     </Router>

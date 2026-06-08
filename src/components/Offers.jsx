@@ -3,13 +3,12 @@ const Offers = ({ offers, values, search }) => {
   return (
     <section className="main-offers-container wrapper">
       {offers
-        .filter((element) => {
-          return (
-            element.product_name.includes(search) &&
-            element.product_price >= values[0] &&
-            element.product_price <= values[1]
-          );
-        })
+        // .filter((element) => {
+        //   return (
+        //     element.product_price >= values[0] &&
+        //     element.product_price <= values[1]
+        //   );
+        // })
         .map((element) => (
           <article key={element._id}>
             <div>
