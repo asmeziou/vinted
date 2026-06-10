@@ -13,12 +13,13 @@ header .container {
   justify-content: space-between;
   align-items: center;
 }
-header .container > div {
+header .container .auth1,
+header .container .auth2 {
   display: flex;
   align-items: center;
 }
-header .container > div button:not(.btn-deconnexion),
-header .container > div a {
+header .container .auth2 button,
+header .container .auth2 a {
   background-color: #fff;
   color: #2cb1ba;
   height: 30px;
@@ -93,6 +94,12 @@ header .container img {
   font-weight: 700;
   font-size: 20px;
 }
+.detail-offer-part3 {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  background-color: #09b1ba;
+}
 .pagination {
   padding: 30px 0;
   display: flex;
@@ -121,6 +128,7 @@ footer {
   padding: 15px 0;
   text-align: center;
   background-color: #2cb1ba;
+  color: white;
 }
 .filter-range {
   margin-top: 30px;
@@ -131,6 +139,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 400px;
 }
 .container-form {
   max-width: 600px;
@@ -155,6 +164,8 @@ textarea {
   border: 1px solid #09b1ba;
   border-radius: 5px;
   font-size: 14px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 textarea {
@@ -186,19 +197,23 @@ input[type="submit"] {
 input[type="submit"]:hover {
   opacity: 0.9;
 }
-
+.btn-vends,
 .btn-deconnexion {
-  background: red;
   color: white;
   margin: 0 10px;
-  height: 30px;
-  width: 155px;
-  border: 1px solid red;
+
   border-radius: 5px;
   font-size: 14px;
-  outline: none;
-  padding: 10px 40px;
-  display: flex;
-  align-items: center;
+  padding: 10px 20px;
+
   text-decoration: none;
+  display: block;
+}
+.btn-deconnexion {
+  background-color: #c2175b;
+  border: 1px solid #c2175b;
+}
+.btn-vends {
+  background-color: #09b1ba;
+  border: 1px solid #09b1ba;
 }

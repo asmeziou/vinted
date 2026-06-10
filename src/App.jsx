@@ -13,11 +13,14 @@ import Login from "./pages/login/Login";
 import Publish from "./pages/Publish";
 import FilterRange from "./components/FilterRange";
 
+import Payement from "./pages/Payement";
+
 function App() {
   // le path de chaque Route du router correspond à 'lurl de la barre d'adresse du navigateur
   const [token, setToken] = useState(Cookies.get("userToken") || "");
   const [values, setValues] = useState([0, 1000]);
   const [search, setSearch] = useState("");
+
   return (
     <Router>
       <Header
@@ -45,6 +48,7 @@ function App() {
           path="/login"
           element={<Login token={token} setToken={setToken} />}
         />
+        <Route path="/payement" element={<Payement />} />
 
         <Route path="/publish" element={<Publish token={token} />} />
       </Routes>

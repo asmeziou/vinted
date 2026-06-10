@@ -34,7 +34,7 @@ const Header = ({ token, setToken, values, setValues, search, setSearch }) => {
 
         <div>
           {token ? (
-            <>
+            <div className="auth1">
               <button
                 className="btn-deconnexion"
                 onClick={() => {
@@ -46,13 +46,15 @@ const Header = ({ token, setToken, values, setValues, search, setSearch }) => {
               >
                 Déconnexion
               </button>
-              <Link to="/publish">Ajouter produit</Link>
-            </>
+              <Link to="/publish" className="btn-vends">
+                Vends tes articles
+              </Link>
+            </div>
           ) : (
-            <>
+            <div className="auth2">
               <Link to="/signup">S'inscrire</Link>
               <Link to="/login">Se connecter</Link>
-            </>
+            </div>
           )}
         </div>
       </div>

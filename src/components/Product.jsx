@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Product = ({ data }) => {
   return (
     <article className="container-offer">
@@ -25,7 +26,14 @@ const Product = ({ data }) => {
             <div>
               <h2>{data.product_name}</h2>
             </div>
-          </div>
+          </div>{" "}
+          <Link
+            to="/payement"
+            state={{ title: data.product_name, price: data.product_price }}
+            className="detail-offer-part3"
+          >
+            Acheter
+          </Link>
         </div>
       </div>
     </article>
